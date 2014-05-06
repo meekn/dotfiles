@@ -10,8 +10,14 @@
 ;; Don't show the startup message.
 (setq inhibit-startup-message t)
 
+;; Start with empty scratch buffer.
+(setq initial-scratch-message "")
+
 ;; Scroll one line at a time.
 (setq scroll-step 1)
+
+;; Don't use tabs for indent.
+(setq-default indent-tabs-mode nil)
 
 ;; Show line numbers.
 (global-linum-mode t)
@@ -53,3 +59,31 @@
 ;; Key binds
 (global-set-key "\C-h" 'delete-backward-char)
 (global-set-key "\M-g" 'goto-line)
+
+;; Split ediff buffers horizontally.
+(setq ediff-split-window-function 'split-window-horizontally)
+
+;; Visualize whitespaces.
+(setq whitespace-style '(face spaces tabs trailing space-mark tab-mark))
+
+(setq whitespace-space-regexp "\\(\u3000+\\)")
+
+(setq whitespace-display-mappings
+      '((space-mark ?\u3000 [?\u25a1])))
+
+(global-whitespace-mode 1)
+
+(set-face-attribute 'whitespace-space nil
+                    :background "DimGray")
+
+(set-face-attribute 'whitespace-tab nil
+                    :background "DimGray"
+                    :underline t)
+
+(set-face-attribute 'whitespace-trailing nil
+                    :background "DimGray"
+                    :underline t)
+
+;; Use directory names as suffixes in case of buffer name collision.
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
