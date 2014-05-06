@@ -15,7 +15,7 @@ setopt noautoremoveslash
 setopt complete_aliases
 setopt print_eight_bit
 
-if [ "$EMACS" = "t" ]; then
+if [[ "$EMACS" = "t" ]]; then
     unsetopt zle
 fi
 
@@ -54,7 +54,7 @@ case $TERM in
 esac
 
 # Escape sequences for screen.
-if [ "$TERM" = "screen" ]; then
+if [[ "$TERM" = *screen* ]]; then
     preexec() {
     	emulate -L zsh
     	local -a cmd
