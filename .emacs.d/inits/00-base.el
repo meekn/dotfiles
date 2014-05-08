@@ -13,8 +13,8 @@
 ;; Start with empty scratch buffer.
 (setq initial-scratch-message "")
 
-;; Scroll one line at a time.
-(setq scroll-step 1)
+;; Don't recenter unless the cursor overruns 1024 lines outside of the buffer.
+(setq scroll-conservatively 1024)
 
 ;; Don't use tabs for indent.
 (setq-default indent-tabs-mode nil)
