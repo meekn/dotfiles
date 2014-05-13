@@ -9,6 +9,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 setopt hist_ignore_dups
 setopt share_history
+setopt EXTENDED_HISTORY
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt noautoremoveslash
