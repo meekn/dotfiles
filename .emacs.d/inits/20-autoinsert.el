@@ -5,8 +5,8 @@
   '(
     ("%file%" . (lambda () (file-name-nondirectory (buffer-file-name))))
     ("%file-without-ext%" . (lambda () 
- 			      (setq file-without-ext (file-name-sans-extension
- 						      (file-name-nondirectory (buffer-file-name))))))
+                              (setq file-without-ext (file-name-sans-extension
+                                                      (file-name-nondirectory (buffer-file-name))))))
     ("%author%" . user-full-name)
     ("%mail%" . (lambda () (identity user-mail-address)))
     ("%year%" . (lambda () (substring (current-time-string) -4)))
@@ -16,10 +16,10 @@
 (defun my-template ()
   (time-stamp)
   (mapc #'(lambda(c)
-	    (progn
-	      (goto-char (point-min))
-	      (replace-string (car c) (funcall (cdr c)) nil)))
-	template-replacements-alist)
+            (progn
+              (goto-char (point-min))
+              (replace-string (car c) (funcall (cdr c)) nil)))
+        template-replacements-alist)
   (goto-char (point-max))
   (message "done."))
 
