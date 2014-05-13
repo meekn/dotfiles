@@ -2,6 +2,8 @@ defutf8 on
 defencoding utf8
 encoding utf-8 utf-8
 
+defflow off
+
 escape ^z^z
 
 bind x
