@@ -74,16 +74,19 @@
 (global-whitespace-mode 1)
 
 (set-face-attribute 'whitespace-space nil
-                    :background "DimGray")
+                    :background "color-235")
 
 (set-face-attribute 'whitespace-tab nil
-                    :background "DimGray"
+                    :background "color-235"
                     :underline t)
 
 (set-face-attribute 'whitespace-trailing nil
-                    :background "DimGray"
+                    :background "color-235"
                     :underline t)
 
 ;; Use directory names as suffixes in case of buffer name collision.
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+;; Set color theme.
+(load-theme 'tango-dark t)
