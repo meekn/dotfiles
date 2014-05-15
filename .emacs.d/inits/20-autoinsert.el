@@ -11,7 +11,8 @@
     ("%mail%" . (lambda () (identity user-mail-address)))
     ("%year%" . (lambda () (substring (current-time-string) -4)))
     ("%month%" . (lambda () (substring (current-time-string) 4 7)))
-    ("%day%" . (lambda () (substring (current-time-string) 8 10)))))
+    ("%day%" . (lambda () (substring (current-time-string) 8 10)))
+    ("%include-guard%" . (lambda () (upcase (replace-regexp-in-string "[^a-zA-Z0-9]" "_" (file-name-nondirectory buffer-file-name)))))))
 
 (defun my-template ()
   (time-stamp)
@@ -25,6 +26,13 @@
 
 (setq auto-insert-alist
       (nconc '(
+               ("\\.c$" . ["template.c" my-template])
+               ("\\.h$" . ["template.h" my-template])
+               ("\\.cc$" . ["template.c" my-template])
+               ("\\.cpp$" . ["template.c" my-template])
+               ("\\.cxx$" . ["template.c" my-template])
+               ("\\.hpp$" . ["template.h" my-template])
+               ("\\.hxx$" . ["template.h" my-template])
                ("\\.py$" . ["template.py" my-template])
                ("\\.tex$" . ["template.tex" my-template])
                ) auto-insert-alist))
