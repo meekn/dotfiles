@@ -8,7 +8,7 @@
 (setq make-backup-files nil)
 
 ;; Hide menu bar.
-(setq menu-bar-mode 0)
+(menu-bar-mode 0)
 
 ;; Don't show the startup message.
 (setq inhibit-startup-message t)
