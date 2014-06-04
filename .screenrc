@@ -4,6 +4,8 @@ encoding utf-8 utf-8
 
 defflow off
 
+defscrollback 1024
+
 escape ^z^z
 
 bind x
