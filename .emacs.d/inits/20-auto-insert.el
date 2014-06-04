@@ -34,5 +34,6 @@
                ("\\.hpp$" . ["template.h" my-template])
                ("\\.hxx$" . ["template.h" my-template])
                ("\\.py$" . ["template.py" my-template])
+               ("\\.rb$" . ["template.rb" my-template])
                ("\\.tex$" . ["template.tex" my-template])
                ) auto-insert-alist))
