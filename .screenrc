@@ -26,3 +26,12 @@ termcapinfo xterm* ti@:te@
 
 shell $SHELL
 term screen-256color
+
+bind S eval split focus "select 0"
+bind | eval 'split -v' focus "select 0"
+
+bind r eval 'command -c resize' 'echo "Resize window"'
+bind -c resize j eval 'command -c resize' 'resize -v +1'
+bind -c resize k eval 'command -c resize' 'resize -v -1'
+bind -c resize h eval 'command -c resize' 'resize -h -1'
+bind -c resize l eval 'command -c resize' 'resize -h +1'
