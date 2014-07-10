@@ -99,6 +99,8 @@ alias screen='screen -U'
 # Replace rm with a safer substitute.
 if which rmtrash >& /dev/null ; then
     alias rm=rmtrash
+elif which trash-put >& /dev/null ; then
+    alias rm=trash-put
 fi
 
 # Read virtualenvwrapper (for Python).
