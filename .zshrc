@@ -28,68 +28,68 @@ SAVEHIST=10000
 case $TERM in
     # In dumb terminals (w/o escape sequences)
     dumb|emacs|unknown)
-	PROMPT="%/%% "
-	PROMPT2="%_%% "
-	SPROMPT="%r is correct? [n,y,a,e]: "
-	[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && PROMPT="${HOST} ${PROMPT}"
-	;;
+        PROMPT="%/%% "
+        PROMPT2="%_%% "
+        SPROMPT="%r is correct? [n,y,a,e]: "
+        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && PROMPT="${HOST} ${PROMPT}"
+        ;;
     # In full-featured terminals
     *)
-	case ${UID} in
-	    # root
-	    0)
-		PROMPT="%B%{[31m%}%/#%{[m%}%b "
-		PROMPT2="%B%{[31m%}%_#%{[m%}%b "
-		SPROMPT="%B%{[31m%}%r is correct? [n,y,a,e]:%{[m%}%b "
-		[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
-		;;
-	    # others
-	    *)
-		PROMPT="%{[31m%}%/%%%{[m%} "
-		PROMPT2="%{[31m%}%_%%%{[m%} "
-		SPROMPT="%{[31m%}%r is correct? [n,y,a,e]:%{[m%} "
-		[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
-		;;
-	esac
-	;;
+        case ${UID} in
+            # root
+            0)
+                PROMPT="%B%{[31m%}%/#%{[m%}%b "
+                PROMPT2="%B%{[31m%}%_#%{[m%}%b "
+                SPROMPT="%B%{[31m%}%r is correct? [n,y,a,e]:%{[m%}%b "
+                [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
+                ;;
+            # others
+            *)
+                PROMPT="%{[31m%}%/%%%{[m%} "
+                PROMPT2="%{[31m%}%_%%%{[m%} "
+                SPROMPT="%{[31m%}%r is correct? [n,y,a,e]:%{[m%} "
+                [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
+                ;;
+        esac
+        ;;
 esac
 
 # Escape sequences for screen.
 if [[ "$TERM" = *screen* ]]; then
     preexec() {
-    	emulate -L zsh
-    	local -a cmd
-	cmd=(${(z)2})
+        emulate -L zsh
+        local -a cmd
+        cmd=(${(z)2})
 
-	local jobname
-    	case $cmd[1] in
-    	    fg)
-		local -a jobstat
-    		if (( $#cmd == 1 )); then
-		    jobstat=(`builtin jobs -l %+`)
-    		else
-    		    jobstat=(`builtin jobs -l $cmd[2]`)
-    		fi
-		jobname=$jobstat[5]
-    		;;
-    	    %*)
-		local -a jobstat
-		jobstat=(`builtin jobs -l $cmd[1]`)
-    		jobname=$jobstat[5]
-    		;;
-	    *)
-		jobname=$cmd[1]
-		;;
-    	esac
+        local jobname
+        case $cmd[1] in
+            fg)
+                local -a jobstat
+                if (( $#cmd == 1 )); then
+                    jobstat=(`builtin jobs -l %+`)
+                else
+                    jobstat=(`builtin jobs -l $cmd[2]`)
+                fi
+                jobname=$jobstat[5]
+                ;;
+            %*)
+                local -a jobstat
+                jobstat=(`builtin jobs -l $cmd[1]`)
+                jobname=$jobstat[5]
+                ;;
+            *)
+                jobname=$cmd[1]
+                ;;
+        esac
 
-    	echo -n "k$jobname\\"
+        echo -n "k$jobname\\"
 
-    	return
+        return
     }
 
     precmd() {
-	printf "\ekshell\e\\"
-	return
+        printf "\ekshell\e\\"
+        return
     }
 fi
 
