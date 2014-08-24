@@ -9,7 +9,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 setopt hist_ignore_dups
 setopt share_history
-setopt EXTENDED_HISTORY
+setopt extended_history
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt noautoremoveslash
@@ -88,7 +88,7 @@ if [[ "$TERM" = *screen* ]]; then
     }
 
     precmd() {
-        printf "\ekshell\e\\"
+        printf "kshell\\"
         return
     }
 fi
@@ -118,6 +118,4 @@ if ls --color -d . >& /dev/null ; then
 elif ls -G -d . >& /dev/null ; then
     # BSD
     alias ls='ls -FG'
-else
-    # others (such as Solaris)
 fi
