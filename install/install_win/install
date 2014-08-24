@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+get_pip_uri=https://bootstrap.pypa.io/get-pip.py
+ag_uri=http://geoff.greer.fm/ag/releases/the_silver_searcher-0.24.1.tar.gz
+
+wget $get_pip_uri -O - | python
+pip install virtualenv virtualenvwrapper
+
+mkdir -p /usr/local/src
+cd /usr/local/src
+wget $ag_uri
+tar xzf the_silver_searcher-0.24.1.tar.gz
+cd the_silver_searcher-0.24.1
+./configure --prefix=/usr/local/stow/the_silver_searcher-0.24.1
+make
+make install
+cd /usr/local/stow
+stow the_silver_searcher-0.24.1
