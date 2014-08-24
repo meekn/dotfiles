@@ -1,0 +1,63 @@
+#!/usr/bin/env sh
+
+if (! which brew >& /dev/null) ; then
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+fi
+
+brew update
+brew upgrade
+
+targets=( \
+    "rmtrash" \
+    "zsh" \
+    "tig" \
+    "--cocoa --srgb --with-gnutls --japanese emacs" \
+    "boost" \
+    "ag" \
+    "ruby" \
+    "rbenv" \
+    "ntfs-3g"
+)
+
+brew tap homebrew/dupes
+targets+=( \
+    "screen"
+)
+
+brew tap sanemat/font
+targets+=( \
+    "ricty"
+)
+
+brew tap homebrew/binary
+targets+=( \
+    "packer"
+)
+
+brew tap caskroom/cask
+targets+=( \
+    "caskroom/cask/brew-cask"
+)
+
+cask_targets=( \
+    "google-chrome" \
+    "skype" \
+    "sourcetree" \
+    "dropbox" \
+    "atom" \
+    "virtualbox" \
+    "vagrant" \
+    "vlc"
+)
+
+IFS="
+"
+for target in ${targets[@]}; do
+    brew install $target
+done
+
+for cask_target in ${cask_targets[@]}; do
+    brew cask install $cask_target
+done
+
+brew linkapps
