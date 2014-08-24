@@ -7,3 +7,5 @@
                   nil
                   'append)
 (add-to-list 'default-frame-alist '(font . "fontset-ricty"))
+
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
