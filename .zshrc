@@ -93,6 +93,9 @@ if [[ "$TERM" = *screen* ]]; then
     }
 fi
 
+# Use Emacs daemon mode.
+alias emacs='emacsclient -nw -a ""'
+
 # Use GNU screen in Unicode.
 alias screen='screen -U'
 
