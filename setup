@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE:-$0}")"; pwd)"
+ln -sf $script_dir/.emacs.d ~
+ln -sf $script_dir/.zshrc ~
+ln -sf $script_dir/.zshenv ~
+ln -sf $script_dir/.screenrc ~
