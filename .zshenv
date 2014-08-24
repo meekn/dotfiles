@@ -15,3 +15,9 @@ path=(
     /usr/local/bin(N-/)
     ${path}
 )
+
+case ${OSTYPE} in
+    cygwin)
+        export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+        ;;
+esac
