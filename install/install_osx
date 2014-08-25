@@ -47,7 +47,8 @@ cask_targets=( \
     "atom" \
     "virtualbox" \
     "vagrant" \
-    "vlc"
+    "vlc" \
+    "musicbrainz-picard"
 )
 
 IFS="
