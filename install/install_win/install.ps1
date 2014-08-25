@@ -1,13 +1,13 @@
 $script_dir = (Split-Path $script:myInvocation.MyCommand.path -parent)
 
-$COMMAND = "iex " + (Join-Path $script_dir "install_ctrl2cap.ps1")
-$ARGS = "-NoProfile", "-ExecutionPolicy", "unrestricted", "-Command", $COMMAND
-Start-Process powershell.exe -Verb runas -ArgumentList $ARGS
+$command = "iex " + (Join-Path $script_dir "install_ctrl2cap.ps1")
+$args = "-NoProfile", "-ExecutionPolicy", "unrestricted", "-Command", $command
+Start-Process powershell.exe -Verb runas -ArgumentList $args
 
-$COMMAND = "iex " + (Join-Path $script_dir "install_cygwin.ps1")
-$ARGS = "-NoProfile", "-ExecutionPolicy", "unrestricted", "-Command", $COMMAND
-Start-Process powershell.exe -Verb runas -ArgumentList $ARGS
+$command = "iex " + (Join-Path $script_dir "install_cygwin.ps1")
+$args = "-NoProfile", "-ExecutionPolicy", "unrestricted", "-Command", $command
+Start-Process powershell.exe -Verb runas -ArgumentList $args
 
-$COMMAND = "iex " + (Join-Path $script_dir "install_ntemacs.ps1")
-$ARGS = "-NoProfile", "-ExecutionPolicy", "unrestricted", "-Command", $COMMAND
-Start-Process powershell.exe -Verb runas -ArgumentList $ARGS
+$command = "iex " + (Join-Path $script_dir "install_ntemacs.ps1")
+$args = "-NoProfile", "-ExecutionPolicy", "unrestricted", "-Command", $command
+Start-Process powershell.exe -Verb runas -ArgumentList $args

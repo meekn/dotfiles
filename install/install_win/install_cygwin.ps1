@@ -7,23 +7,23 @@ $uri = "http://cygwin.com/setup-x86_64.exe"
 Set-Location (Join-Path $Env:USERPROFILE "Downloads")
 Invoke-WebRequest -Uri $uri -OutFile "setup-x86_64.exe"
 
-$PKG_NAMES = @()
-$PKG_NAMES += "pkg-config", "stow", "screen", "tmux", "zsh", "trash-cli", "wget", "rsync", "ssh", "libiconv"
-$PKG_NAMES += "emacs", "vim"
-$PKG_NAMES += "gcc-g++", "clang", "libboost-devel", "gdb", "make", "cmake", "automake"
-$PKG_NAMES += "git", "subversion", "git-svn", "tig"
-$PKG_NAMES += "python", "ruby"
-$PKG_NAMES += "texlive-collection-langcjk", "gnuplot", "doxygen"
-$PKG_NAMES += "gnupg", "openssl"
-$PKG_NAMES += "libuuid-devel"
-$PKG_NAMES += "libpcre-devel", "liblzma-devel"
+$pkg_names = @()
+$pkg_names += "pkg-config", "stow", "screen", "tmux", "zsh", "trash-cli", "wget", "rsync", "ssh", "libiconv"
+$pkg_names += "emacs", "vim"
+$pkg_names += "gcc-g++", "clang", "libboost-devel", "gdb", "make", "cmake", "automake"
+$pkg_names += "git", "subversion", "git-svn", "tig"
+$pkg_names += "python", "ruby"
+$pkg_names += "texlive-collection-langcjk", "gnuplot", "doxygen"
+$pkg_names += "gnupg", "openssl"
+$pkg_names += "libuuid-devel"
+$pkg_names += "libpcre-devel", "liblzma-devel"
 
 $ARGS = @()
 $ARGS += "--quiet-mode"
 $ARGS += "--root", $root
 $ARGS += "--site", $site
 $ARGS += "--local-package-dir", (Get-Location).Path
-$ARGS += "--packages", [string]::Join(",", $PKG_NAMES)
+$ARGS += "--packages", [string]::Join(",", $pkg_names)
 
 Start-Process setup-x86_64.exe -Wait -ArgumentList $ARGS
 
