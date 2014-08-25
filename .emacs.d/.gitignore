@@ -1,4 +1,7 @@
-ac-comphist.dat
-projectile-bookmarks.eld
 .python-environments
+ac-comphist.dat
+auto-save-list
 elpa
+projectile.cache
+projectile-bookmarks.eld
+server
