@@ -4,9 +4,13 @@ ag_uri=http://geoff.greer.fm/ag/releases/the_silver_searcher-0.24.1.tar.gz
 fakecygpty_uri=https://raw.githubusercontent.com/Shougo/fakecygpty/master/fakecygpty.c
 global_uri=http://tamacom.com/global/global-6.3.1.tar.gz
 
+
+# Install pip, virtualenv, virtualenvwrapper
 wget $get_pip_uri -O - | python
 pip install virtualenv virtualenvwrapper
 
+
+# Install the silver searcher
 mkdir -p /usr/local/src
 cd /usr/local/src
 wget $ag_uri
@@ -18,12 +22,16 @@ make install
 cd /usr/local/stow
 stow the_silver_searcher-0.24.1
 
+
+# Install fakecygpty
 mkdir -p /usr/local/src
 cd /usr/local/src
 wget $fakecygpty_uri
 gcc -o fakecygpty fakecygpty.c
 cp fakecygpty.exe /usr/local/bin
 
+
+# Install GNU GLOBAL
 mkdir -p /usr/local/src
 cd /usr/local/src
 wget $global_uri
