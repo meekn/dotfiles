@@ -1,0 +1,5 @@
+$script_dir = (Split-Path $script:myInvocation.MyCommand.path -parent)
+cmd /C mklink /D (Join-Path $Env:USERPROFILE ".emacs.d") (Join-Path $script_dir ".emacs.d")
+cmd /C mklink (Join-Path $Env:USERPROFILE ".screenrc") (Join-Path $script_dir ".screenrc")
+cmd /C mklink (Join-Path $Env:USERPROFILE ".zshenv") (Join-Path $script_dir ".zshenv")
+cmd /C mklink (Join-Path $Env:USERPROFILE ".zshrc") (Join-Path $script_dir ".zshrc")
