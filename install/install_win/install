@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 get_pip_uri=https://bootstrap.pypa.io/get-pip.py
 ag_uri=http://geoff.greer.fm/ag/releases/the_silver_searcher-0.24.1.tar.gz
+fakecygpty_uri=https://raw.githubusercontent.com/Shougo/fakecygpty/master/fakecygpty.c
+global_uri=http://tamacom.com/global/global-6.3.1.tar.gz
 
 wget $get_pip_uri -O - | python
 pip install virtualenv virtualenvwrapper
@@ -15,3 +17,20 @@ make
 make install
 cd /usr/local/stow
 stow the_silver_searcher-0.24.1
+
+mkdir -p /usr/local/src
+cd /usr/local/src
+wget $fakecygpty_uri
+gcc -o fakecygpty fakecygpty.c
+cp fakecygpty.exe /usr/local/bin
+
+mkdir -p /usr/local/src
+cd /usr/local/src
+wget $global_uri
+tar xzf global-6.3.1.tar.gz
+cd global-6.3.1
+./configure --prefix=/usr/local/stow/global-6.3.1
+make
+make install
+cd /usr/local/stow
+stow global-6.3.1
