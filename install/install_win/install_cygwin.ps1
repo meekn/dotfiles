@@ -4,8 +4,10 @@ $root = "C:\cygwin64"
 $site = "http://ftp.yz.yamagata-u.ac.jp/pub/cygwin/"
 $uri = "http://cygwin.com/setup-x86_64.exe"
 
+$installer = Split-Path (New-Object System.Uri($uri)).AbsolutePath -Leaf
+
 Set-Location (Join-Path $Env:USERPROFILE "Downloads")
-Invoke-WebRequest -Uri $uri -OutFile "setup-x86_64.exe"
+Invoke-WebRequest -Uri $uri -OutFile $installer
 
 $pkg_names = @()
 $pkg_names += "pkg-config", "stow", "screen", "tmux", "zsh", "trash-cli", "wget", "rsync", "ssh", "libiconv"
@@ -25,7 +27,7 @@ $ARGS += "--site", $site
 $ARGS += "--local-package-dir", (Get-Location).Path
 $ARGS += "--packages", [string]::Join(",", $pkg_names)
 
-Start-Process setup-x86_64.exe -Wait -ArgumentList $ARGS
+Start-Process $installer -Wait -ArgumentList $ARGS
 
 [System.Environment]::SetEnvironmentVariable("HOME", $Env:USERPROFILE, [System.EnvironmentVariableTarget]::User)
 [System.Environment]::SetEnvironmentVariable("CYGWIN", "nodosfilewarning winsymlinks", [System.EnvironmentVariableTarget]::Machine)
