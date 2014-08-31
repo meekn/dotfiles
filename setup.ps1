@@ -1,6 +1,6 @@
 $script_dir = (Split-Path $script:myInvocation.MyCommand.path -parent)
 
-$targets = (".emacs.d", ".screenrc", ".zshenv", ".zshrc")
+$targets = (".inputrc", ".screenrc", ".profile", ".bashrc", ".zshenv", ".zshrc", ".emacs.d")
 
 $targets | ForEach-Object {
         $options = ""
