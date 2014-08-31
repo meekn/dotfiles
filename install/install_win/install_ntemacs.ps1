@@ -1,10 +1,15 @@
+$prefix = "C:"
+
 Write-Output "Installing NTEmacs..."
 
-$uri = "http://sourceforge.jp/frs/redir.php?m=iij&f=%2Fgnupack%2F46675%2Femacs-24.3-20130316.exe"
+$archive = "emacs-24.3-20130316.exe"
+$dir_name = [System.IO.Path]::GetFileNameWithoutExtension($archive)
+
+$uri = "http://iij.dl.sourceforge.jp/gnupack/46675" + "/" + $archive
 
 Set-Location (Join-Path $Env:USERPROFILE "Downloads")
-Invoke-WebRequest -Uri $uri -OutFile "emacs-24.3-20130316.exe"
-Start-Process "emacs-24.3-20130316.exe" -Wait -ArgumentList "-o", (Get-Location).Path, "-y"
-Move-Item "emacs-24.3-20130316" "C:\"
+Invoke-WebRequest -Uri $uri -OutFile $archive
+Start-Process $archive -Wait -ArgumentList "-o", (Get-Location).Path, "-y"
+Move-Item $dir_name $prefix
 
 Write-Output "Done."
