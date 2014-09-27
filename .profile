@@ -12,6 +12,10 @@ path_prepend () {
     export PATH="$1:$PATH"
 }
 
+if [[ -d "/usr/local/sbin" ]]; then
+    path_prepend "/usr/local/sbin"
+fi
+
 if [[ -d "/usr/local/bin" ]]; then
     path_prepend "/usr/local/bin"
 fi
