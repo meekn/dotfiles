@@ -55,6 +55,6 @@
   (defun flymake-cc-init ()
     (flymake-simple-make-or-generic-init
      "g++" '("-std=c++11" "-Wall" "-Wextra" "-pedantic" "-fsyntax-only")))
-  (push '("\\.\\(cc\\|cpp\\|C\\|CPP\\|hpp\\)\\'" flymake-cc-init)
+  (push '("\\.\\(cc\\|cpp\\|C\\|CPP\\|h\\|hpp\\)\\'" flymake-cc-init)
         flymake-allowed-file-name-masks)
   (add-hook 'c++-mode-hook '(lambda () (flymake-mode t))))
