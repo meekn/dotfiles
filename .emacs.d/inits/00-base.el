@@ -98,3 +98,6 @@
 
 ;; Set color theme.
 (load-theme 'tango-dark t)
+
+;; Treat ".h" files as C++ headers
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
