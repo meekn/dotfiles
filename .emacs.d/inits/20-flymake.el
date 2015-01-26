@@ -5,7 +5,7 @@
     "Displays the error/warning for the current line in the minibuffer"
     (interactive)
     (progn
-      (let* ((line-no (flymake-current-line-no) )
+      (let* ((line-no (line-number-at-pos) )
              (line-err-info-list (nth 0 (flymake-find-err-info flymake-err-info line-no)))
              (count (length line-err-info-list)))
         (while (> count 0)
