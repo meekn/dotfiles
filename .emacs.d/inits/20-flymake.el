@@ -30,7 +30,12 @@
       (list cmd (append opts (list local-file)))))
 
   (defun makefile-exists (dir)
-    (if (file-exists-p (concat dir "Makefile")) t
+    (if
+        (and
+         (file-exists-p (concat dir "Makefile"))
+         (not (string= "" (shell-command-to-string
+                           (concat "grep '^check-syntax *:' " dir "Makefile")))))
+        t
       (let ((padir (file-name-directory (directory-file-name dir))))
         (if (and (not (string= dir padir)) padir) (makefile-exists padir) nil))))
 
