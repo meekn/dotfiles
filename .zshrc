@@ -99,6 +99,9 @@ alias emacs='emacsclient -nw -a ""'
 # Use GNU screen in Unicode.
 alias screen='screen -U'
 
+# Skip binary files and color output in grep.
+alias grep='grep --binary-files=without-match --color=auto'
+
 # Replace rm with a safer substitute.
 if which rmtrash >& /dev/null ; then
     alias rm=rmtrash

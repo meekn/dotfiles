@@ -1,6 +1,5 @@
 export HISTCONTROL=ignoreboth
 export LANG=ja_JP.UTF-8
-export GREP_OPTIONS='--binary-files=without-match --color=auto'
 
 # Use `cat' for pager in dumb terminals (like emacs shell mode).
 if [[ "$TERM" = "dumb" ]]; then
@@ -18,6 +17,9 @@ alias emacs='emacsclient -nw -a ""'
 
 # Use GNU screen in Unicode.
 alias screen='screen -U'
+
+# Skip binary files and color output in grep.
+alias grep='grep --binary-files=without-match --color=auto'
 
 # Replace rm with a safer substitute.
 if which rmtrash >& /dev/null ; then
