@@ -10,4 +10,5 @@
 (setq ac-auto-show-menu 0.05)
 (setq ac-quick-help-delay 0.05)
 
+(setq ac-auto-start t)
 (setq ac-use-menu-map t)
