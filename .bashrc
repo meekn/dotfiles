@@ -14,13 +14,13 @@ fi
 
 # SSH agent
 if [[ -e ~/.ssh-agent-info ]]; then
-    source ~/.ssh-agent-info
+    source ~/.ssh-agent-info >& /dev/null
 fi
 
 ssh-add -l >& /dev/null
 if [[ $? = 2 ]] ; then
     ssh-agent > ~/.ssh-agent-info
-    source ~/.ssh-agent-info
+    source ~/.ssh-agent-info >& /dev/null
 fi
 
 # Use Emacs daemon mode.
