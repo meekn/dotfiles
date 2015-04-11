@@ -12,6 +12,17 @@ if [[ "$TERM" = *screen* ]]; then
     export PS1=k\\$PS1
 fi
 
+# SSH agent
+if [[ -e ~/.ssh-agent-info ]]; then
+    source ~/.ssh-agent-info
+fi
+
+ssh-add -l >& /dev/null
+if [[ $? = 2 ]] ; then
+    ssh-agent > ~/.ssh-agent-info
+    source ~/.ssh-agent-info
+fi
+
 # Use Emacs daemon mode.
 alias emacs='emacsclient -nw -a ""'
 

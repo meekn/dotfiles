@@ -93,6 +93,17 @@ if [[ "$TERM" = *screen* ]]; then
     }
 fi
 
+# SSH agent
+if [[ -e ~/.ssh-agent-info ]]; then
+    source ~/.ssh-agent-info
+fi
+
+ssh-add -l >& /dev/null
+if [[ $? = 2 ]] ; then
+    ssh-agent > ~/.ssh-agent-info
+    source ~/.ssh-agent-info
+fi
+
 # Use Emacs daemon mode.
 alias emacs='emacsclient -nw -a ""'
 
