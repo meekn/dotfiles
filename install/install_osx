@@ -12,12 +12,14 @@ targets=( \
     "zsh" \
     "tig" \
     "--cocoa --srgb --with-gnutls --japanese emacs" \
+    "gdb" \
     "boost" \
     "ag" \
     "python" \
     "ruby" \
     "rbenv" \
-    "ntfs-3g"
+    "ntfs-3g" \
+    "emscripten"
 )
 
 brew tap homebrew/dupes
@@ -42,6 +44,7 @@ targets+=( \
 
 cask_targets=( \
     "google-chrome" \
+    "firefox" \
     "skype" \
     "sourcetree" \
     "dropbox" \
@@ -49,7 +52,8 @@ cask_targets=( \
     "virtualbox" \
     "vagrant" \
     "vlc" \
-    "musicbrainz-picard"
+    "musicbrainz-picard" \
+    "kindle"
 )
 
 IFS="
