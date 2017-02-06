@@ -1,8 +1,3 @@
-;; If there is no server running, be the one.
-(require 'server)
-(unless (server-running-p)
-  (server-start))
-
 ;; Language
 (set-language-environment "Japanese")
 
