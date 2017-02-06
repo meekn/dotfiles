@@ -1,15 +1,22 @@
 (require 'package)
 
 ;; MELPA
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-;; Marmalade
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 (package-initialize)
 
-(unless (package-installed-p 'init-loader)
-  (package-refresh-contents)
-  (package-install 'init-loader))
+(package-install 'init-loader)
+(package-install 'ag)
+(package-install 'anzu)
+(package-install 'auto-complete)
+(package-install 'cython-mode)
+(package-install 'helm)
+(package-install 'magit)
+(package-install 'projectile)
+(package-install 'undo-tree)
+(package-install 'wgrep)
+(package-install 'wgrep-ag)
+(package-install 'yasnippet)
 
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)

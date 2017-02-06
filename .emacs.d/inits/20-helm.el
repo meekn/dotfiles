@@ -1,6 +1,3 @@
-(unless (package-installed-p 'helm)
-  (package-install 'helm))
-
 (require 'helm-config)
 
 (helm-mode 1)

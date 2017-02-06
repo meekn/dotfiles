@@ -1,6 +1,3 @@
-(unless (package-installed-p 'auto-complete)
-  (package-install 'auto-complete))
-
 (require 'auto-complete)
 (require 'auto-complete-config)
 
