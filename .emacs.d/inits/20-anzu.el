@@ -1,1 +1,3 @@
-(global-anzu-mode +1)
+(use-package anzu
+  :config
+  (global-anzu-mode +1))

@@ -5,6 +5,7 @@
 
 (package-initialize)
 
+(package-install 'use-package)
 (package-install 'init-loader)
 (package-install 'ag)
 (package-install 'anzu)
