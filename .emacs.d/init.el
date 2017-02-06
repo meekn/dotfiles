@@ -4,7 +4,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 (package-initialize)
-(package-refresh-contents)
+;; (package-refresh-contents)
 
 (package-install 'use-package)
 (package-install 'init-loader)
