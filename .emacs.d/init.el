@@ -27,9 +27,11 @@
 (package-install 'irony)
 (package-install 'company-irony)
 
-(require 'init-loader)
-(setq init-loader-show-log-after-init nil)
-(init-loader-load "~/.emacs.d/inits")
+(use-package init-loader
+  :config
+  (setq init-loader-show-log-after-init nil)
+  (init-loader-load "~/.emacs.d/inits"))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
