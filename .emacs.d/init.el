@@ -24,6 +24,8 @@
 (package-install 'yasnippet)
 (package-install 'jedi-core)
 (package-install 'company-jedi)
+(package-install 'irony)
+(package-install 'company-irony)
 
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
