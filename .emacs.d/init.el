@@ -30,6 +30,7 @@
 (package-install 'flycheck)
 (package-install 'flycheck-irony)
 (package-install 'google-c-style)
+(package-install 'rtags)
 
 
 (use-package init-loader
