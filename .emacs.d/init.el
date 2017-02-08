@@ -27,6 +27,8 @@
 (package-install 'company-jedi)
 (package-install 'irony)
 (package-install 'company-irony)
+(package-install 'flycheck)
+(package-install 'flycheck-irony)
 
 (use-package init-loader
   :config
