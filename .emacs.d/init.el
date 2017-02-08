@@ -29,6 +29,8 @@
 (package-install 'company-irony)
 (package-install 'flycheck)
 (package-install 'flycheck-irony)
+(package-install 'google-c-style)
+
 
 (use-package init-loader
   :config
