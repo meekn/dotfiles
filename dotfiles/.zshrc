@@ -110,18 +110,6 @@ alias screen='screen -U'
 # Skip binary files and color output in grep.
 alias grep='grep --binary-files=without-match --color=auto'
 
-# Replace rm with a safer substitute.
-if which rmtrash >& /dev/null ; then
-    alias rm=rmtrash
-elif which trash-put >& /dev/null ; then
-    alias rm=trash-put
-fi
-
-# Read virtualenvwrapper (for Python).
-if which virtualenvwrapper.sh >& /dev/null ; then
-    . virtualenvwrapper.sh
-fi
-
 # Color ls in each environment.
 if ls --color -d . >& /dev/null ; then
     # GNU
