@@ -96,8 +96,3 @@
 
 ;; Treat ".h" files as C++ headers.
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-
-;; Enable mouse in CUI environment.
-(xterm-mouse-mode t)
-(global-set-key [mouse-4] '(lambda () (interactive) (scroll-down 1)))
-(global-set-key [mouse-5] '(lambda () (interactive) (scroll-up 1)))

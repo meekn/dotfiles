@@ -10,7 +10,6 @@
 (package-install 'init-loader)
 (package-install 'ag)
 (package-install 'anzu)
-(package-install 'migemo)
 (package-install 'company)
 (package-install 'cython-mode)
 (package-install 'dockerfile-mode)
