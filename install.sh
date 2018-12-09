@@ -1,10 +1,13 @@
 #!/usr/bin/env sh
+
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE:-$0}")"; pwd)"
-ln -sf ${script_dir}/.inputrc ~
-ln -sf ${script_dir}/.screenrc ~
-ln -sf ${script_dir}/.tmux.conf ~
-ln -sf ${script_dir}/.profile ~
-ln -sf ${script_dir}/.bashrc ~
-ln -sf ${script_dir}/.zshrc ~
-ln -sf ${script_dir}/.zshenv ~
-ln -sf ${script_dir}/.emacs.d ~
+dotfiles_dir="${script_dir}/dotfiles"
+
+ln -sf "${dotfiles_dir}/.inputrc" ~
+ln -sf "${dotfiles_dir}/.screenrc" ~
+ln -sf "${dotfiles_dir}/.tmux.conf" ~
+ln -sf "${dotfiles_dir}/.profile" ~
+ln -sf "${dotfiles_dir}/.bashrc" ~
+ln -sf "${dotfiles_dir}/.zshrc" ~
+ln -sf "${dotfiles_dir}/.zshenv" ~
+ln -sf "${dotfiles_dir}/.emacs.d" ~
