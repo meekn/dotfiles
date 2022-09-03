@@ -10,4 +10,3 @@ ln -sf "${dotfiles_dir}/.profile" ~
 ln -sf "${dotfiles_dir}/.bashrc" ~
 ln -sf "${dotfiles_dir}/.zshrc" ~
 ln -sf "${dotfiles_dir}/.zshenv" ~
-ln -sf "${dotfiles_dir}/.emacs.d" ~

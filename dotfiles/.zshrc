@@ -16,10 +16,6 @@ setopt noautoremoveslash
 setopt complete_aliases
 setopt print_eight_bit
 
-if [[ "$EMACS" = "t" ]]; then
-    unsetopt zle
-fi
-
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -27,7 +23,7 @@ SAVEHIST=10000
 # Prompt settings.
 case $TERM in
     # In dumb terminals (w/o escape sequences)
-    dumb|emacs|unknown)
+    dumb|unknown)
         PROMPT="%/%% "
         PROMPT2="%_%% "
         SPROMPT="%r is correct? [n,y,a,e]: "
