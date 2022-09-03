@@ -29,11 +29,6 @@ alias screen='screen -U'
 # Skip binary files and color output in grep.
 alias grep='grep --binary-files=without-match --color=auto'
 
-# Read virtualenvwrapper (for Python).
-if which virtualenvwrapper.sh >& /dev/null ; then
-    . virtualenvwrapper.sh
-fi
-
 # Add options for ls in each environment.
 if ls --show-control-chars -d . >& /dev/null ; then
     # GNU
