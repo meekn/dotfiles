@@ -110,11 +110,11 @@ alias screen='screen -U'
 # Skip binary files and color output in grep.
 alias grep='grep --binary-files=without-match --color=auto'
 
-# Color ls in each environment.
-if ls --color -d . >& /dev/null ; then
+# Add options for ls in each environment.
+if ls --show-control-chars -d . >& /dev/null ; then
     # GNU
-    alias ls='ls -F --show-control-chars --color=auto'
+    alias ls='ls -F --color=auto --show-control-chars'
 elif ls -G -d . >& /dev/null ; then
     # BSD
-    alias ls='ls -FG'
+    alias ls='ls -F --color=auto'
 fi
